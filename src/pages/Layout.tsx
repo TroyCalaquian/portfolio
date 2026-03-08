@@ -6,7 +6,7 @@ import {
   Burger,
   AppShellFooter,
   Text,
-  Container
+  Container,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Outlet, Link, useLocation } from "react-router-dom";
@@ -23,7 +23,7 @@ export default function Layout() {
   ];
 
   return (
-    <AppShell header={{ height: 70 }} footer={{height: 70}} padding="md">
+    <AppShell header={{ height: 70 }} footer={{ height: 70 }} padding="md">
       {/* HEADER (Horizontal Navbar) */}
       <AppShell.Header>
         <Group h="100%" px="lg" justify="space-between">
@@ -62,8 +62,20 @@ export default function Layout() {
             </Text>
 
             <Group gap="md">
-              <Anchor href="https://github.com/TroyCalaquian"><FaGithub size={24} /></Anchor>
-              <Anchor href="https://www.linkedin.com/in/troycalaquian/"><FaLinkedin size={24} /></Anchor>
+              <Anchor
+                href="https://github.com/TroyCalaquian"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub size={24} />
+              </Anchor>
+              <Anchor
+                href="https://www.linkedin.com/in/troycalaquian/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin size={24} />
+              </Anchor>
             </Group>
           </Group>
         </Container>
