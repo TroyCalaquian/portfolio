@@ -12,14 +12,10 @@ import {
   Group,
   Button,
   SimpleGrid,
+  Timeline,
 } from "@mantine/core";
 import dummyImg from "../assets/react.svg";
-import { useNavigate } from "react-router-dom";
-import { FaReact, FaNode } from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io";
-import { BiLogoTypescript } from "react-icons/bi";
-import { SiHeroui } from "react-icons/si";
-import Skill from "../components/SkillPoint";
+import Point from "../components/iconListPoint";
 import skills from "../helper/Skills";
 
 function About() {
@@ -47,9 +43,41 @@ function About() {
           </Title>
           <SimpleGrid cols={5}>
             {skills.map((skill) => (
-              <Skill name={skill.name} icon={skill.icon} />
+              <Point name={skill.name} icon={skill.icon} />
             ))}
           </SimpleGrid>
+        </Box>
+
+        <Box>
+          <Title order={2} mb="md">
+            Experience
+          </Title>
+          <Timeline active={0} bulletSize={24} lineWidth={2}>
+            <Timeline.Item title="Web Developer">
+              <Text c="dimmed" size="sm">
+                Alpha Ministries Canada · June - August 2025
+              </Text>
+              <Text size="xs">Maintained and updated the guest page for Alpha Ministries Canada to help users sign up</Text>
+            </Timeline.Item>
+            <Timeline.Item title="Graduated BCIT CST">
+              <Text c="dimmed" size="sm">
+                BCIT · June 2024
+              </Text>
+              <Text size="xs">Graduated from BCIT with a diploma in Computer Systems Technology with distinction</Text>
+            </Timeline.Item>
+            <Timeline.Item title="Software Developer (Practicum)">
+              <Text c="dimmed" size="sm">
+                Eagle Eyes Search · April - May 2024
+              </Text>
+              <Text size="xs">Created a prototype as part of a feasibility test to validate client requirements and guide implementation decisions</Text>
+            </Timeline.Item>
+            <Timeline.Item title="Software Developer (Practicum)">
+              <Text c="dimmed" size="sm">
+                Love Your Planet · January - April 2024
+              </Text>
+              <Text size="xs">Debugged and patched issues in React Native to support ongoing development</Text>
+            </Timeline.Item>
+          </Timeline>
         </Box>
       </Stack>
     </Container>

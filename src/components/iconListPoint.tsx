@@ -1,11 +1,11 @@
 import {Stack, Text} from "@mantine/core"
 
-interface SkillProps {
+interface pointProps {
     name: string;
     icon: React.ReactNode;
 }
 
-export default function Skill({name, icon}: SkillProps) {
+export default function Point({name, icon}: pointProps) {
     return (
         <Stack align="center">
             {icon}
