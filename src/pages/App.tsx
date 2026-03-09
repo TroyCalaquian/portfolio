@@ -30,9 +30,7 @@ function App() {
             </Text>
 
             <Group mt="lg">
-              <Button onClick={() => navigate("/about")}>
-                About Me
-              </Button>
+              <Button onClick={() => navigate("/about")}>About Me</Button>
               <Button variant="outline" onClick={() => navigate("/contact")}>
                 Contact Me
               </Button>
@@ -76,7 +74,6 @@ function App() {
             </Group>
           </Card>
         </Box>
-        
       </Stack>
     </Container>
   );

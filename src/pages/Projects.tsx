@@ -1,12 +1,66 @@
-import { useState } from 'react'
+import {
+  Box,
+  Container,
+  Stack,
+  Title,
+  Text,
+  Card,
+  Group,
+  Button,
+} from "@mantine/core";
+import { useState } from "react";
+import projects from "../helper/projects";
+import Point from "../components/iconListPoint";
 
 function Projects() {
-
   return (
-    <>
+    <Container size="lg" py="xl">
+      <Stack gap={80}>
+        <Box>
+          <Title order={1}>Projects</Title>
 
-    </>
-  )
+          <Text size="lg" mt="md">
+            Here are some of the things that I've built that I'm proud of!
+          </Text>
+        </Box>
+
+        {/* Add photo of each website*/}
+        <Box>
+          <Stack gap="lg">
+            {projects.map((project) => (
+              <Card shadow="sm" padding="lg" radius="md" withBorder>
+                <Title order={3}>{project.title}</Title>
+                <Text mt="sm">{project.description}</Text>
+
+                <Title order={5} mt="md">
+                  Tech Stack
+                </Title>
+                <Group mt="md">
+                  {project.tech.map((tech) => (
+                    <Point name={tech.name} icon={tech.icon} />
+                  ))}
+                </Group>
+
+                <Group mt="md">
+                  <Button
+                    component="a"
+                    href={project.link}
+                    target="_blank"
+                    variant="light"
+                    rel="noopener noreferrer"
+                  >
+                    View on GitHub
+                  </Button>
+                </Group>
+              </Card>
+            ))}
+          </Stack>
+        </Box>
+      </Stack>
+
+      {/* Add link to contacts page */}
+    </Container>
+  );
 }
 
-export default Projects
+export default Projects;
