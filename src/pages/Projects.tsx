@@ -42,7 +42,7 @@ function Projects() {
         {/* Add search bar to filter projects by tech stack */}
         <TextInput
           leftSection={<FaSearch />}
-          placeholder="Search projects"
+          placeholder="Search by name or tech used"
           onChange={(e) => setSearchTerm(e.target.value)}
         />
 

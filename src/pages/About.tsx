@@ -45,7 +45,7 @@ function About() {
             Skills
           </Title>
           <SimpleGrid cols={5}>
-            {skills.map((skill) => (
+            {Object.values(skills).map((skill) => (
               <Point name={skill.name} icon={skill.icon} />
             ))}
           </SimpleGrid>
