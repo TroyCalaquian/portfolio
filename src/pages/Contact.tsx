@@ -7,20 +7,20 @@ import {
   SimpleGrid,
   Card,
   Button,
+  Divider,
 } from "@mantine/core";
 import { useState } from "react";
-import { FaEnvelope, FaLinkedin } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin, FaFileAlt } from "react-icons/fa";
 
 function Contact() {
   return (
     <Container size="lg" py="xl">
       <Stack gap={40}>
-        <Box maw={500}>
-          <Title order={1}>Contact Me</Title>
+        <Box>
+          <Title order={1}>Contact Me!</Title>
 
           <Text size="lg" mt="md">
-            I'm always open to new opportunities and collaborations. Feel free
-            to reach out to me via email or social media.
+            Feel free to email me or connect with me on LinkedIn!
           </Text>
         </Box>
 
@@ -34,7 +34,9 @@ function Contact() {
             withBorder
           >
             <FaEnvelope size={60} />
-            <Title order={3}>Email</Title>
+            <Title order={3} mt="sm">
+              Email
+            </Title>
             <Text mt="sm">trcalaquian@gmail.com</Text>
           </Card>
           <Card
@@ -48,15 +50,35 @@ function Contact() {
             withBorder
           >
             <FaLinkedin size={60} />
-            <Title order={3}>LinkedIn</Title>
+            <Title order={3} mt="sm">
+              LinkedIn
+            </Title>
             <Text mt="sm">linkedin.com/in/troycalaquian</Text>
           </Card>
         </SimpleGrid>
-        <Box maw={500}>
-          <Title order={2}>Want to see my resume?</Title>
-          <Button mt="md" component="a" href="/TroyCalaquian_resume.pdf" download="TroyCalaquian_Resume.pdf">
-            Download Resume
-          </Button>
+
+        <Divider my="xs" />
+
+        <Title order={2}>Want to see my resume?</Title>
+
+        <Box maw={550}>
+          <Card
+            shadow="sm"
+            padding="lg"
+            radius="md"
+            component="a"
+            href="/TroyCalaquian_resume.pdf"
+            download="TroyCalaquian_Resume.pdf"
+            withBorder
+          >
+            <FaFileAlt size={60} />
+            <Title order={3} mt="sm">
+              Download it here!
+            </Title>
+            <Text mt="sm">
+              View my full work, history, skills, and experience in detail
+            </Text>
+          </Card>
         </Box>
       </Stack>
     </Container>

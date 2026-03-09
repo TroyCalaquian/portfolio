@@ -16,7 +16,7 @@ import {
 } from "@mantine/core";
 import dummyImg from "../assets/react.svg";
 import Point from "../components/iconListPoint";
-import skills from "../helper/Skills";
+import skills from "../helper/skills.tsx";
 
 function About() {
   return (
@@ -80,6 +80,10 @@ function About() {
           </Timeline>
         </Box>
       </Stack>
+
+      {/* Add link to projects page */}
+
+      
     </Container>
   );
 }
