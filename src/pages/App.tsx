@@ -10,9 +10,10 @@ import {
   Badge,
   Group,
   Button,
+  Anchor,
 } from "@mantine/core";
 import dummyImg from "../assets/react.svg";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function App() {
   const navigate = useNavigate();
@@ -61,7 +62,7 @@ function App() {
               SupaBase
             </Text>
 
-            <Group mt="md">
+            <Group mt="md" align="center">
               <Button
                 component="a"
                 href="https://github.com/TroyCalaquian/rhythm-game-info"
@@ -71,6 +72,10 @@ function App() {
               >
                 View on GitHub
               </Button>
+
+              <Anchor component={Link} to="/projects" size="sm">
+                See all projects →
+              </Anchor>
             </Group>
           </Card>
         </Box>

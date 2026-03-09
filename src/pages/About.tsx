@@ -13,6 +13,7 @@ import {
   Button,
   SimpleGrid,
   Timeline,
+  Divider,
 } from "@mantine/core";
 import dummyImg from "../assets/react.svg";
 import Point from "../components/iconListPoint";
@@ -30,15 +31,17 @@ function About() {
               applications. I enjoy learning and implementing new technologies
               to create clean, user-friendly applications. I also love helping
               people turn their ideas into reality through code. Outside of
-              coding, I enjoy rhythm games, both playing them and listening to
+              coding, I enjoy playing video games, especially rhythm games, both playing them and listening to
               the music that comes with them.
             </Text>
           </Box>
           <Image src={dummyImg} alt="Troy portrait" w={250} radius="md" />
         </Flex>
 
+        <Divider size="sm"/>
+
         <Box>
-          <Title order={2} mb="md">
+          <Title order={2} mb="lg">
             Skills
           </Title>
           <SimpleGrid cols={5}>
@@ -48,8 +51,10 @@ function About() {
           </SimpleGrid>
         </Box>
 
+        <Divider size="sm"/>
+
         <Box>
-          <Title order={2} mb="md">
+          <Title order={2} mb="lg">
             Experience
           </Title>
           <Timeline active={0} bulletSize={24} lineWidth={2}>
@@ -83,7 +88,7 @@ function About() {
 
       {/* Add link to projects page */}
 
-      
+
     </Container>
   );
 }

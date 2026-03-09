@@ -58,7 +58,7 @@ export default function Layout() {
         <Container py="md">
           <Group justify="space-between">
             <Text size="sm" c="dimmed">
-              © {new Date().getFullYear()} Troy Calaquian
+              Made with ❤️ by Troy Calaquian
             </Text>
 
             <Group gap="md">
