@@ -1,24 +1,22 @@
 import { createTheme} from '@mantine/core';
 import type { MantineColorsTuple } from '@mantine/core';
 
-const myColor: MantineColorsTuple = [
-  '#ebfff1',
-  '#d4fee2',
-  '#a4fdc1',
-  '#72fd9e',
-  '#4efd81',
-  '#3dfd6e',
-  '#34fe64',
-  '#29e253',
-  '#1dc948',
-  '#004a19'
-];
-
 const theme = createTheme({
+  primaryColor: "neonGreen",
   colors: {
-    myColor,
+    neonGreen: [
+      "#e6fff0",
+      "#b3ffcc",
+      "#80ff99",  
+      "#4dff66",
+      "#1aff33",
+      "#00e62a",
+      "#00b321",
+      "#008019",
+      "#004d0f",
+      "#001a05",
+    ],
   },
-  primaryColor: 'myColor',
 });
 
-export default theme
+export default theme;

@@ -16,7 +16,7 @@ import Projects from "./pages/Projects.tsx";
 import theme from "./helper/theme.tsx";
 
 createRoot(document.getElementById("root")!).render(
-  <MantineProvider>
+  <MantineProvider theme={theme} defaultColorScheme="auto">
     <StrictMode>
       <BrowserRouter>
         <Routes>

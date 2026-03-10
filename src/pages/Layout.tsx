@@ -7,10 +7,12 @@ import {
   AppShellFooter,
   Text,
   Container,
+  ActionIcon,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Outlet, Link, useLocation } from "react-router-dom";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaSun, FaMoon } from "react-icons/fa";
+import { useMantineColorScheme, useComputedColorScheme } from "@mantine/core";
 
 export default function Layout() {
   const location = useLocation();
@@ -21,6 +23,12 @@ export default function Layout() {
     { label: "Projects", path: "/projects" },
     { label: "Contact", path: "/contact" },
   ];
+
+  const { setColorScheme } = useMantineColorScheme();
+  const computedColorScheme = useComputedColorScheme("dark");
+
+  const toggle = () =>
+    setColorScheme(computedColorScheme === "dark" ? "light" : "dark");
 
   return (
     <AppShell header={{ height: 70 }} footer={{ height: 70 }} padding="md">
@@ -40,12 +48,15 @@ export default function Layout() {
                 component={Link}
                 to={link.path}
                 fw={location.pathname === link.path ? 700 : 500}
-                c={location.pathname === link.path ? "blue" : "gray"}
+                c={location.pathname === link.path ? "neonGreen" : "gray"}
                 underline="never"
               >
                 {link.label}
               </Anchor>
             ))}
+            <ActionIcon variant="subtle" onClick={toggle}>
+              {computedColorScheme === "dark" ? <FaSun /> : <FaMoon />}
+            </ActionIcon>
           </Group>
         </Group>
       </AppShell.Header>
