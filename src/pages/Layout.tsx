@@ -62,6 +62,9 @@ export default function Layout() {
                 {link.label}
               </Anchor>
             ))}
+            <ActionIcon variant="subtle" onClick={toggle}>
+              {computedColorScheme === "dark" ? <FaSun /> : <FaMoon />}
+            </ActionIcon>
           </Group>
         </Group>
       </AppShell.Header>
