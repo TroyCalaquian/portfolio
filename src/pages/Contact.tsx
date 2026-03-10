@@ -11,12 +11,19 @@ import {
 } from "@mantine/core";
 import { useState } from "react";
 import { FaEnvelope, FaLinkedin, FaFileAlt } from "react-icons/fa";
+import { useAnimatedNavigate } from "../hooks/useAnimatedNavigate";
+import { usePageAnimation } from "../hooks/usePageAnimation";
 
 function Contact() {
+
+  const navigate = useAnimatedNavigate();
+
+  const container = usePageAnimation();
+
   return (
-    <Container size="lg" py="xl">
+    <Container ref={container} className="page-container" size="lg" py="xl">
       <Stack gap={40}>
-        <Box>
+        <Box className="animate-section">
           <Title order={1}>Contact Me!</Title>
 
           <Text size="lg" mt="md">
@@ -24,7 +31,7 @@ function Contact() {
           </Text>
         </Box>
 
-        <SimpleGrid cols={2}>
+        <SimpleGrid cols={2} className="animate-section">
           <Card
             shadow="sm"
             padding="lg"
@@ -59,9 +66,9 @@ function Contact() {
 
         <Divider my="xs" />
 
-        <Title order={2}>Want to see my resume?</Title>
+        <Title order={2} className="animate-section">Want to see my resume?</Title>
 
-        <Box maw={550}>
+        <Box maw={550} className="animate-section">
           <Card
             shadow="sm"
             padding="lg"

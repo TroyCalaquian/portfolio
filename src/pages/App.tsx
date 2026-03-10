@@ -14,15 +14,23 @@ import {
 } from "@mantine/core";
 import dummyImg from "../assets/react.svg";
 import { Link, useNavigate } from "react-router-dom";
+import { useAnimatedNavigate } from "../hooks/useAnimatedNavigate";
+import { usePageAnimation } from "../hooks/usePageAnimation";
 
 function App() {
-  const navigate = useNavigate();
+  const navigate = useAnimatedNavigate();
+
+  const container = usePageAnimation();
 
   return (
-    <Container size="lg" py="xl">
+    <Container ref={container} className="page-container" size="lg" py="xl">
       <Stack gap={80}>
         {/* HERO */}
-        <Flex justify="space-between" align="center">
+        <Flex
+          justify="space-between"
+          align="center"
+          className="animate-section"
+        >
           <Box maw={500}>
             <Title order={1}>Hi, I'm Troy!</Title>
 
@@ -42,7 +50,7 @@ function App() {
         </Flex>
 
         {/* FEATURED PROJECT */}
-        <Box>
+        <Box className="animate-section">
           <Title order={2} mb="md">
             Featured Project
           </Title>
@@ -73,7 +81,13 @@ function App() {
                 View on GitHub
               </Button>
 
-              <Anchor component={Link} to="/projects" size="sm">
+              <Anchor
+                underline="never"
+                c="inherit"
+                onClick={() => navigate("/projects")}
+                style={{ cursor: "pointer" }}
+                size="sm"
+              >
                 See all projects →
               </Anchor>
             </Group>

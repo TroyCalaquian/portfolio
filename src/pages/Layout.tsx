@@ -13,9 +13,12 @@ import { useDisclosure } from "@mantine/hooks";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { FaGithub, FaLinkedin, FaSun, FaMoon } from "react-icons/fa";
 import { useMantineColorScheme, useComputedColorScheme } from "@mantine/core";
+import { useAnimatedNavigate } from "../hooks/useAnimatedNavigate";
 
 export default function Layout() {
   const location = useLocation();
+
+  const navigate = useAnimatedNavigate();
 
   const navLinks = [
     { label: "Home", path: "/" },
@@ -36,7 +39,12 @@ export default function Layout() {
       <AppShell.Header>
         <Group h="100%" px="lg" justify="space-between">
           {/* Logo / Name */}
-          <Anchor component={Link} to="/" underline="never" c="inherit">
+          <Anchor
+            underline="never"
+            c="inherit"
+            onClick={() => navigate("/")}
+            style={{ cursor: "pointer" }}
+          >
             <Title order={4}>Troy Portfolio</Title>
           </Anchor>
 
@@ -45,18 +53,15 @@ export default function Layout() {
             {navLinks.map((link) => (
               <Anchor
                 key={link.path}
-                component={Link}
-                to={link.path}
                 fw={location.pathname === link.path ? 700 : 500}
                 c={location.pathname === link.path ? "neonGreen" : "gray"}
                 underline="never"
+                onClick={() => navigate(link.path)}
+                style={{ cursor: "pointer" }}
               >
                 {link.label}
               </Anchor>
             ))}
-            <ActionIcon variant="subtle" onClick={toggle}>
-              {computedColorScheme === "dark" ? <FaSun /> : <FaMoon />}
-            </ActionIcon>
           </Group>
         </Group>
       </AppShell.Header>

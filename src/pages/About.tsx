@@ -18,12 +18,19 @@ import {
 import dummyImg from "../assets/react.svg";
 import Point from "../components/iconListPoint";
 import skills from "../helper/skills.tsx";
+import { useAnimatedNavigate } from "../hooks/useAnimatedNavigate.tsx";
+import { usePageAnimation } from "../hooks/usePageAnimation.tsx";
 
 function About() {
+
+    const navigate = useAnimatedNavigate();
+  
+    const container = usePageAnimation();
+
   return (
-    <Container size="lg" py="xl">
+    <Container ref={container} className="page-container" size="lg" py="xl">
       <Stack gap={80}>
-        <Flex justify="space-between" align="center">
+        <Flex justify="space-between" align="center" className="animate-section">
           <Box maw={800}>
             <Title order={1}>Troy Calaquian</Title>
             <Text size="lg" mt="md">
@@ -40,7 +47,7 @@ function About() {
 
         <Divider size="sm"/>
 
-        <Box>
+        <Box className="animate-section">
           <Title order={2} mb="lg">
             Skills
           </Title>
@@ -53,7 +60,7 @@ function About() {
 
         <Divider size="sm"/>
 
-        <Box>
+        <Box className="animate-section">
           <Title order={2} mb="lg">
             Experience
           </Title>

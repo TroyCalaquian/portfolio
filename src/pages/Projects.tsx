@@ -13,6 +13,8 @@ import { useState } from "react";
 import projects from "../helper/projectList";
 import Point from "../components/iconListPoint";
 import { FaSearch } from "react-icons/fa";
+import { useAnimatedNavigate } from "../hooks/useAnimatedNavigate";
+import { usePageAnimation } from "../hooks/usePageAnimation";
 
 function Projects() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -26,10 +28,14 @@ function Projects() {
     );
   });
 
+  const navigate = useAnimatedNavigate();
+
+  const container = usePageAnimation();
+
   return (
-    <Container size="lg" py="xl">
+    <Container ref={container} className="page-container" size="lg" py="xl">
       <Stack gap={80}>
-        <Box>
+        <Box className="animate-section">
           <Title order={1}>Projects</Title>
 
           <Text size="lg" mt="md">
@@ -44,11 +50,12 @@ function Projects() {
           leftSection={<FaSearch />}
           placeholder="Search by name or tech used"
           onChange={(e) => setSearchTerm(e.target.value)}
+          className="animate-section"
         />
 
         <Stack gap="lg">
           {filteredProjects.map((project) => (
-            <Card shadow="sm" padding="lg" radius="md" withBorder>
+            <Card shadow="sm" padding="lg" radius="md" withBorder className="animate-section">
               <Title order={3}>{project.title}</Title>
               <Text mt="sm">{project.description}</Text>
 
