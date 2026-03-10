@@ -15,6 +15,7 @@ import Point from "../components/iconListPoint";
 import { FaSearch } from "react-icons/fa";
 import { useAnimatedNavigate } from "../hooks/useAnimatedNavigate";
 import { usePageAnimation } from "../hooks/usePageAnimation";
+import CTA from "../components/cta";
 
 function Projects() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -55,7 +56,13 @@ function Projects() {
 
         <Stack gap="lg">
           {filteredProjects.map((project) => (
-            <Card shadow="sm" padding="lg" radius="md" withBorder className="animate-section">
+            <Card
+              shadow="sm"
+              padding="lg"
+              radius="md"
+              withBorder
+              className="animate-section"
+            >
               <Title order={3}>{project.title}</Title>
               <Text mt="sm">{project.description}</Text>
 
@@ -82,9 +89,14 @@ function Projects() {
             </Card>
           ))}
         </Stack>
-      </Stack>
 
-      {/* Add link to contacts page */}
+        <CTA
+          hook="Like what you see?"
+          support="Feel free to reach out if you'd like to collaborate"
+          btnString="Get in touch"
+          redirect="/contact"
+        />
+      </Stack>
     </Container>
   );
 }

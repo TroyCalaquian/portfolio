@@ -20,17 +20,21 @@ import Point from "../components/iconListPoint";
 import skills from "../helper/skills.tsx";
 import { useAnimatedNavigate } from "../hooks/useAnimatedNavigate.tsx";
 import { usePageAnimation } from "../hooks/usePageAnimation.tsx";
+import CTA from "../components/cta.tsx";
 
 function About() {
+  const navigate = useAnimatedNavigate();
 
-    const navigate = useAnimatedNavigate();
-  
-    const container = usePageAnimation();
+  const container = usePageAnimation();
 
   return (
     <Container ref={container} className="page-container" size="lg" py="xl">
       <Stack gap={80}>
-        <Flex justify="space-between" align="center" className="animate-section">
+        <Flex
+          justify="space-between"
+          align="center"
+          className="animate-section"
+        >
           <Box maw={800}>
             <Title order={1}>Troy Calaquian</Title>
             <Text size="lg" mt="md">
@@ -38,14 +42,14 @@ function About() {
               applications. I enjoy learning and implementing new technologies
               to create clean, user-friendly applications. I also love helping
               people turn their ideas into reality through code. Outside of
-              coding, I enjoy playing video games, especially rhythm games, both playing them and listening to
-              the music that comes with them.
+              coding, I enjoy playing video games, especially rhythm games, both
+              playing them and listening to the music that comes with them.
             </Text>
           </Box>
           <Image src={dummyImg} alt="Troy portrait" w={250} radius="md" />
         </Flex>
 
-        <Divider size="sm"/>
+        <Divider className="animate-section" size="sm" />
 
         <Box className="animate-section">
           <Title order={2} mb="lg">
@@ -58,7 +62,7 @@ function About() {
           </SimpleGrid>
         </Box>
 
-        <Divider size="sm"/>
+        <Divider className="animate-section" size="sm" />
 
         <Box className="animate-section">
           <Title order={2} mb="lg">
@@ -69,33 +73,48 @@ function About() {
               <Text c="dimmed" size="sm">
                 Alpha Ministries Canada · June - August 2025
               </Text>
-              <Text size="xs">Maintained and updated the guest page for Alpha Ministries Canada to help users sign up</Text>
+              <Text size="xs">
+                Maintained and updated the guest page for Alpha Ministries
+                Canada to help users sign up
+              </Text>
             </Timeline.Item>
             <Timeline.Item title="Graduated BCIT CST">
               <Text c="dimmed" size="sm">
                 BCIT · June 2024
               </Text>
-              <Text size="xs">Graduated from BCIT with a diploma in Computer Systems Technology with distinction</Text>
+              <Text size="xs">
+                Graduated from BCIT with a diploma in Computer Systems
+                Technology with distinction
+              </Text>
             </Timeline.Item>
             <Timeline.Item title="Software Developer (Practicum)">
               <Text c="dimmed" size="sm">
                 Eagle Eyes Search · April - May 2024
               </Text>
-              <Text size="xs">Created a prototype as part of a feasibility test to validate client requirements and guide implementation decisions</Text>
+              <Text size="xs">
+                Created a prototype as part of a feasibility test to validate
+                client requirements and guide implementation decisions
+              </Text>
             </Timeline.Item>
             <Timeline.Item title="Software Developer (Practicum)">
               <Text c="dimmed" size="sm">
                 Love Your Planet · January - April 2024
               </Text>
-              <Text size="xs">Debugged and patched issues in React Native to support ongoing development</Text>
+              <Text size="xs">
+                Debugged and patched issues in React Native to support ongoing
+                development
+              </Text>
             </Timeline.Item>
           </Timeline>
         </Box>
+
+        <CTA
+          hook="Check out my projects"
+          support="See what I've been working on"
+          btnString="View Projects"
+          redirect="/projects"
+        />
       </Stack>
-
-      {/* Add link to projects page */}
-
-
     </Container>
   );
 }

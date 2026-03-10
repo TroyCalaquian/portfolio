@@ -64,7 +64,7 @@ function Contact() {
           </Card>
         </SimpleGrid>
 
-        <Divider my="xs" />
+        <Divider className="animate-section" my="xs" />
 
         <Title order={2} className="animate-section">Want to see my resume?</Title>
 
