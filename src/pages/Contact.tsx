@@ -6,17 +6,12 @@ import {
   Text,
   SimpleGrid,
   Card,
-  Button,
   Divider,
 } from "@mantine/core";
-import { useState } from "react";
 import { FaEnvelope, FaLinkedin, FaFileAlt } from "react-icons/fa";
-import { useAnimatedNavigate } from "../hooks/useAnimatedNavigate";
 import { usePageAnimation } from "../hooks/usePageAnimation";
 
 function Contact() {
-
-  const navigate = useAnimatedNavigate();
 
   const container = usePageAnimation();
 

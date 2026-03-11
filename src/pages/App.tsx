@@ -7,13 +7,11 @@ import {
   Container,
   Stack,
   Card,
-  Badge,
   Group,
   Button,
   Anchor,
 } from "@mantine/core";
 import dummyImg from "../assets/react.svg";
-import { Link, useNavigate } from "react-router-dom";
 import { useAnimatedNavigate } from "../hooks/useAnimatedNavigate";
 import { usePageAnimation } from "../hooks/usePageAnimation";
 

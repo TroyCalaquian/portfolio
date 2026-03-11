@@ -4,14 +4,13 @@ import {
   Title,
   Anchor,
   Burger,
-  AppShellFooter,
   Text,
   Container,
   ActionIcon,
   Stack,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { Outlet, Link, useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import { FaGithub, FaLinkedin, FaSun, FaMoon } from "react-icons/fa";
 import { useMantineColorScheme, useComputedColorScheme } from "@mantine/core";
 import { useAnimatedNavigate } from "../hooks/useAnimatedNavigate";

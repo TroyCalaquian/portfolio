@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   Flex,
   Box,
@@ -7,10 +6,6 @@ import {
   Image,
   Container,
   Stack,
-  Card,
-  Badge,
-  Group,
-  Button,
   SimpleGrid,
   Timeline,
   Divider,
@@ -18,12 +13,10 @@ import {
 import dummyImg from "../assets/react.svg";
 import Point from "../components/iconListPoint";
 import skills from "../helper/skills.tsx";
-import { useAnimatedNavigate } from "../hooks/useAnimatedNavigate.tsx";
 import { usePageAnimation } from "../hooks/usePageAnimation.tsx";
 import CTA from "../components/cta.tsx";
 
 function About() {
-  const navigate = useAnimatedNavigate();
 
   const container = usePageAnimation();
 

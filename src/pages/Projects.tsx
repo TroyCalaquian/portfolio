@@ -8,12 +8,13 @@ import {
   Group,
   Button,
   TextInput,
+  Image,
+  Flex,
 } from "@mantine/core";
 import { useState } from "react";
 import projects from "../helper/projectList";
 import Point from "../components/iconListPoint";
 import { FaSearch } from "react-icons/fa";
-import { useAnimatedNavigate } from "../hooks/useAnimatedNavigate";
 import { usePageAnimation } from "../hooks/usePageAnimation";
 import CTA from "../components/cta";
 
@@ -28,8 +29,6 @@ function Projects() {
       )
     );
   });
-
-  const navigate = useAnimatedNavigate();
 
   const container = usePageAnimation();
 
@@ -63,7 +62,48 @@ function Projects() {
               withBorder
               className="animate-section"
             >
-              <Title order={3}>{project.title}</Title>
+              <Flex
+                direction={{ base: "column", sm: "row" }}
+                gap="md"
+              >
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  radius="md"
+                  h={{ base: 200, sm: 300 }}
+                  w={{ base: "100%", sm: 300 }}
+                  style={{ objectFit: "cover" }}
+                />
+                <Box style={{ flex: 1 }}>
+                  <Title order={3} mt="md">
+                    {project.title}
+                  </Title>
+                  <Text mt="sm">{project.description}</Text>
+
+                  <Title order={5} mt="md">
+                    Tech Stack
+                  </Title>
+                  <Group mt="md">
+                    {project.tech.map((tech) => (
+                      <Point name={tech.name} icon={tech.icon} />
+                    ))}
+                  </Group>
+
+                  <Group mt="md">
+                    <Button
+                      component="a"
+                      href={project.link}
+                      target="_blank"
+                      variant="light"
+                      rel="noopener noreferrer"
+                    >
+                      View on GitHub
+                    </Button>
+                  </Group>
+                </Box>
+              </Flex>
+              {/* <Image src={project.image} alt={project.title} radius="md" h={200} style={{ objectFit: "cover" }} />
+              <Title order={3} mt="md">{project.title}</Title>
               <Text mt="sm">{project.description}</Text>
 
               <Title order={5} mt="md">
@@ -85,7 +125,7 @@ function Projects() {
                 >
                   View on GitHub
                 </Button>
-              </Group>
+              </Group> */}
             </Card>
           ))}
         </Stack>
