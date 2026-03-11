@@ -8,6 +8,7 @@ import {
   Text,
   Container,
   ActionIcon,
+  Stack,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Outlet, Link, useLocation } from "react-router-dom";
@@ -19,6 +20,8 @@ export default function Layout() {
   const location = useLocation();
 
   const navigate = useAnimatedNavigate();
+
+  const [opened, { toggle: toggleNav }] = useDisclosure();
 
   const navLinks = [
     { label: "Home", path: "/" },
@@ -34,7 +37,12 @@ export default function Layout() {
     setColorScheme(computedColorScheme === "dark" ? "light" : "dark");
 
   return (
-    <AppShell header={{ height: 70 }} footer={{ height: 70 }} padding="md">
+    <AppShell
+      header={{ height: 70 }}
+      footer={{ height: 70 }}
+      navbar={{ width: 200, breakpoint: "sm", collapsed: { mobile: !opened, desktop: true } }}
+      padding="md"
+    >
       {/* HEADER (Horizontal Navbar) */}
       <AppShell.Header>
         <Group h="100%" px="lg" justify="space-between">
@@ -48,8 +56,10 @@ export default function Layout() {
             <Title order={4}>Troy Portfolio</Title>
           </Anchor>
 
+          <Burger opened={opened} onClick={toggleNav} hiddenFrom="sm" />
+
           {/* Nav Links */}
-          <Group gap="lg">
+          <Group gap="lg" visibleFrom="sm">
             {navLinks.map((link) => (
               <Anchor
                 key={link.path}
@@ -68,6 +78,27 @@ export default function Layout() {
           </Group>
         </Group>
       </AppShell.Header>
+
+      {/* Vertical Navbar */}
+      <AppShell.Navbar p="md">
+        <Stack gap="xs">
+          {navLinks.map((link) => (
+            <Anchor
+              key={link.path}
+              fw={location.pathname === link.path ? 700 : 500}
+              c={location.pathname === link.path ? "neonGreen" : "gray"}
+              underline="never"
+              onClick={() => {navigate(link.path); toggleNav();}}
+              style={{ cursor: "pointer" }}
+            >
+              {link.label}
+            </Anchor>
+          ))}
+          <ActionIcon variant="subtle" onClick={toggle}>
+            {computedColorScheme === "dark" ? <FaSun /> : <FaMoon />}
+          </ActionIcon>
+        </Stack>
+      </AppShell.Navbar>
 
       {/* Page Content */}
       <AppShell.Main>

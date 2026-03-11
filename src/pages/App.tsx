@@ -29,9 +29,11 @@ function App() {
         <Flex
           justify="space-between"
           align="center"
+          direction={{ base: "column-reverse", sm: "row" }}
+          gap={{ base: "xl", sm: 0 }}
           className="animate-section"
         >
-          <Box maw={500}>
+          <Box maw={{ base: "100%", sm: 500 }}>
             <Title order={1}>Hi, I'm Troy!</Title>
 
             <Text size="lg" mt="md">

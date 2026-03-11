@@ -31,7 +31,7 @@ function Contact() {
           </Text>
         </Box>
 
-        <SimpleGrid cols={2} className="animate-section">
+        <SimpleGrid cols={{ base: 1, sm: 2 }} className="animate-section">
           <Card
             shadow="sm"
             padding="lg"
