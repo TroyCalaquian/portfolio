@@ -43,9 +43,6 @@ function Projects() {
           </Text>
         </Box>
 
-        {/* Add photo of each website*/}
-
-        {/* Add search bar to filter projects by tech stack */}
         <TextInput
           leftSection={<FaSearch />}
           placeholder="Search by name or tech used"
@@ -102,30 +99,6 @@ function Projects() {
                   </Group>
                 </Box>
               </Flex>
-              {/* <Image src={project.image} alt={project.title} radius="md" h={200} style={{ objectFit: "cover" }} />
-              <Title order={3} mt="md">{project.title}</Title>
-              <Text mt="sm">{project.description}</Text>
-
-              <Title order={5} mt="md">
-                Tech Stack
-              </Title>
-              <Group mt="md">
-                {project.tech.map((tech) => (
-                  <Point name={tech.name} icon={tech.icon} />
-                ))}
-              </Group>
-
-              <Group mt="md">
-                <Button
-                  component="a"
-                  href={project.link}
-                  target="_blank"
-                  variant="light"
-                  rel="noopener noreferrer"
-                >
-                  View on GitHub
-                </Button>
-              </Group> */}
             </Card>
           ))}
         </Stack>

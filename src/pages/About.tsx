@@ -30,7 +30,7 @@ function About() {
           gap={{ base: "xl", sm: 0 }}
           className="animate-section"
         >
-          <Box maw={{ base: "100%", sm: 800 }}>
+          <Box maw={{ base: "100%", sm: 500 }}>
             <Title order={1}>Troy Calaquian</Title>
             <Text size="lg" mt="md">
               I am a BCIT CST graduate with a passion for building modern web

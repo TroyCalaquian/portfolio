@@ -12,11 +12,13 @@ import About from "./pages/About.tsx";
 import Contact from "./pages/Contact.tsx";
 import Projects from "./pages/Projects.tsx";
 import theme from "./helper/theme.tsx";
+import ScrollToTop from "./components/scrollToTop.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <MantineProvider theme={theme} defaultColorScheme="auto">
     <StrictMode>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<App />} />
