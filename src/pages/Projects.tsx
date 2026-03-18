@@ -68,8 +68,8 @@ function Projects() {
                   alt={project.title}
                   radius="md"
                   h={{ base: 200, sm: 300 }}
-                  w={{ base: "100%", sm: 300 }}
-                  style={{ objectFit: "cover" }}
+                  w={{ base: "100%", sm: 500 }}
+                  style={{ objectFit: "contain", background: "#13161d" }}
                 />
                 <Box style={{ flex: 1 }}>
                   <Title order={3} mt="md">

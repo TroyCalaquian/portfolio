@@ -11,7 +11,7 @@ import {
   Button,
   Anchor,
 } from "@mantine/core";
-import dummyImg from "../assets/react.svg";
+import profilePic from "../assets/TroyCalaquian.png";
 import { useAnimatedNavigate } from "../hooks/useAnimatedNavigate";
 import { usePageAnimation } from "../hooks/usePageAnimation";
 
@@ -46,7 +46,17 @@ function App() {
             </Group>
           </Box>
 
-          <Image src={dummyImg} alt="Troy portrait" w={250} radius="md" />
+          <Image
+            src={profilePic}
+            alt="Troy portrait"
+            w={250}
+            h={250}
+            radius="50%"
+            style={{
+              objectFit: "cover",
+              border: "3px solid #39ff14",
+            }}
+          />
         </Flex>
 
         {/* FEATURED PROJECT */}

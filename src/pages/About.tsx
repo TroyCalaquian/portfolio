@@ -10,14 +10,13 @@ import {
   Timeline,
   Divider,
 } from "@mantine/core";
-import dummyImg from "../assets/react.svg";
+import profilePic from "../assets/TroyCalaquian.png";
 import Point from "../components/iconListPoint";
 import skills from "../helper/skills.tsx";
 import { usePageAnimation } from "../hooks/usePageAnimation.tsx";
 import CTA from "../components/cta.tsx";
 
 function About() {
-
   const container = usePageAnimation();
 
   return (
@@ -41,7 +40,17 @@ function About() {
               playing them and listening to the music that comes with them.
             </Text>
           </Box>
-          <Image src={dummyImg} alt="Troy portrait" w={250} radius="md" />
+          <Image
+            src={profilePic}
+            alt="Troy portrait"
+            w={250}
+            h={250}
+            radius="50%"
+            style={{
+              objectFit: "cover",
+              border: "3px solid #39ff14",
+            }}
+          />
         </Flex>
 
         <Divider className="animate-section" size="sm" />
