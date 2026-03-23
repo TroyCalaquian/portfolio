@@ -23,7 +23,6 @@ function App() {
   return (
     <Container ref={container} className="page-container" size="lg" py="xl">
       <Stack gap={80}>
-        {/* HERO */}
         <Flex
           justify="space-between"
           align="center"
@@ -59,14 +58,12 @@ function App() {
           />
         </Flex>
 
-        {/* FEATURED PROJECT */}
         <Box className="animate-section">
           <Title order={2} mb="md">
             Featured Project
           </Title>
 
           <Card shadow="sm" padding="lg" radius="md" withBorder>
-            {/* IMAGE HERE LATER */}
 
             <Title order={3}>Chunithm Game Info</Title>
 

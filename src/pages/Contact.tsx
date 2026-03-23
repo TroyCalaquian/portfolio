@@ -12,7 +12,6 @@ import { FaEnvelope, FaLinkedin, FaFileAlt } from "react-icons/fa";
 import { usePageAnimation } from "../hooks/usePageAnimation";
 
 function Contact() {
-
   const container = usePageAnimation();
 
   return (
@@ -28,6 +27,7 @@ function Contact() {
 
         <SimpleGrid cols={{ base: 1, sm: 2 }} className="animate-section">
           <Card
+            className="contact-card"
             shadow="sm"
             padding="lg"
             radius="md"
@@ -42,6 +42,7 @@ function Contact() {
             <Text mt="sm">trcalaquian@gmail.com</Text>
           </Card>
           <Card
+            className="contact-card"
             shadow="sm"
             padding="lg"
             radius="md"
@@ -61,10 +62,13 @@ function Contact() {
 
         <Divider className="animate-section" my="xs" />
 
-        <Title order={2} className="animate-section">Want to see my resume?</Title>
+        <Title order={2} className="animate-section">
+          Want to see my resume?
+        </Title>
 
         <Box maw={550} className="animate-section">
           <Card
+            className="contact-card"
             shadow="sm"
             padding="lg"
             radius="md"

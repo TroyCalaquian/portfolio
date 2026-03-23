@@ -42,22 +42,19 @@ export default function Layout() {
       navbar={{ width: 200, breakpoint: "sm", collapsed: { mobile: !opened, desktop: true } }}
       padding="md"
     >
-      {/* HEADER (Horizontal Navbar) */}
       <AppShell.Header>
         <Group h="100%" px="lg" justify="space-between">
-          {/* Logo / Name */}
           <Anchor
             underline="never"
             c="inherit"
             onClick={() => navigate("/")}
             style={{ cursor: "pointer" }}
           >
-            <Title order={4}>Troy Portfolio</Title>
+            <Title order={4}>Troy's Portfolio</Title>
           </Anchor>
 
           <Burger opened={opened} onClick={toggleNav} hiddenFrom="sm" />
 
-          {/* Nav Links */}
           <Group gap="lg" visibleFrom="sm">
             {navLinks.map((link) => (
               <Anchor
@@ -78,7 +75,6 @@ export default function Layout() {
         </Group>
       </AppShell.Header>
 
-      {/* Vertical Navbar */}
       <AppShell.Navbar p="md">
         <Stack gap="xs">
           {navLinks.map((link) => (
@@ -99,7 +95,6 @@ export default function Layout() {
         </Stack>
       </AppShell.Navbar>
 
-      {/* Page Content */}
       <AppShell.Main>
         <Outlet />
       </AppShell.Main>
