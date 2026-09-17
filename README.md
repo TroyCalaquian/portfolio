@@ -1,3 +1,12 @@
+# TODO
+
+Improvements that need to be done:
+
+1. Change the layout of the main page
+2. Change the overall color theme
+3. Possibly make a case study (bit hard to do...)
+4. On LinkedIn, change banner to be better
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

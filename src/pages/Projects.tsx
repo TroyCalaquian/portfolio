@@ -78,7 +78,7 @@ function Projects() {
                   <Text mt="sm">{project.description}</Text>
 
                   <Title order={5} mt="md">
-                    Tech Stack
+                    Technologies used:
                   </Title>
                   <Group mt="md">
                     {project.tech.map((tech) => (

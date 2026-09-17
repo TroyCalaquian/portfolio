@@ -34,15 +34,8 @@ function App() {
             <Title order={1}>Hi, I'm Troy!</Title>
 
             <Text size="lg" mt="md">
-              BCIT CST graduate building modern web applications.
+              Programmer who loves building clean, user-friendly applications while learning and implementing more technologies.
             </Text>
-
-            <Group mt="lg">
-              <Button onClick={() => navigate("/about")}>About Me</Button>
-              <Button variant="outline" onClick={() => navigate("/contact")}>
-                Contact Me
-              </Button>
-            </Group>
           </Box>
 
           <Image

@@ -4,7 +4,6 @@ import {
   Title,
   Anchor,
   Burger,
-  Text,
   Container,
   ActionIcon,
   Stack,
@@ -101,9 +100,6 @@ export default function Layout() {
       <AppShell.Footer>
         <Container py="md">
           <Group justify="space-between">
-            <Text size="sm" c="dimmed">
-              Made with ❤️ by Troy Calaquian
-            </Text>
 
             <Group gap="md">
               <Anchor

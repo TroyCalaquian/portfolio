@@ -57,7 +57,7 @@ function About() {
 
         <Box className="animate-section">
           <Title order={2} mb="lg">
-            Skills
+            Technologies and Applications used
           </Title>
           <SimpleGrid cols={5}>
             {Object.values(skills).map((skill) => (
