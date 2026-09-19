@@ -73,7 +73,7 @@ function Contact() {
             padding="lg"
             radius="md"
             component="a"
-            href="/TroyCalaquian_resume.pdf"
+            href="/TroyCalaquian_Resume.pdf"
             download="TroyCalaquian_Resume.pdf"
             withBorder
           >
