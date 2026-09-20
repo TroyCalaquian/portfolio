@@ -59,7 +59,7 @@ export default function Layout() {
               <Anchor
                 key={link.path}
                 fw={location.pathname === link.path ? 700 : 500}
-                c={location.pathname === link.path ? "neonGreen" : "gray"}
+                c={location.pathname === link.path ? "mossGreen" : "gray"}
                 underline="never"
                 onClick={() => navigate(link.path)}
                 style={{ cursor: "pointer" }}

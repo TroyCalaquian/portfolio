@@ -34,7 +34,7 @@ function App() {
             <Title order={1}>Hi, I'm Troy!</Title>
 
             <Text size="lg" mt="md">
-              Programmer who loves building clean, user-friendly applications while learning and implementing more technologies.
+              I'm a programmer who loves building clean, user-friendly applications while learning and implementing more technologies.
             </Text>
           </Box>
 

@@ -59,17 +59,17 @@ function Projects() {
               withBorder
               className="animate-section"
             >
-              <Flex
-                direction={{ base: "column", sm: "row" }}
-                gap="md"
-              >
+              <Flex direction={{ base: "column", sm: "row" }} gap="md">
                 <Image
                   src={project.image}
                   alt={project.title}
                   radius="md"
                   h={{ base: 200, sm: 300 }}
                   w={{ base: "100%", sm: 500 }}
-                  style={{ objectFit: "contain", background: "#13161d" }}
+                  style={{
+                    objectFit: "contain",
+                    background: "var(--mantine-color-dark-6)",
+                  }}
                 />
                 <Box style={{ flex: 1 }}>
                   <Title order={3} mt="md">
@@ -92,6 +92,7 @@ function Projects() {
                       href={project.link}
                       target="_blank"
                       variant="light"
+                      color="blueSlate"
                       rel="noopener noreferrer"
                     >
                       View on GitHub

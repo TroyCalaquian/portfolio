@@ -32,12 +32,14 @@ function About() {
           <Box maw={{ base: "100%", sm: 500 }}>
             <Title order={1}>Troy Calaquian</Title>
             <Text size="lg" mt="md">
-              I am a BCIT CST graduate with a passion for building modern web
-              applications. I enjoy learning and implementing new technologies
-              to create clean, user-friendly applications. I also love helping
-              people turn their ideas into reality through code. Outside of
-              coding, I enjoy playing video games, especially rhythm games, both
-              playing them and listening to the music that comes with them.
+              I am a programmer who enjoys learning and implementing new
+              technologies to create clean, user-friendly applications. I
+              believe that codebases shouldn't be too complicated and other
+              developers should understand what is happening in their code. I
+              also love helping people turn their ideas into reality through
+              code. Outside of coding, I enjoy playing video games, especially
+              rhythm games, both playing them and listening to the music that
+              comes with them.
             </Text>
           </Box>
           <Image
@@ -72,7 +74,7 @@ function About() {
           <Title order={2} mb="lg">
             Experience
           </Title>
-          <Timeline active={0} bulletSize={24} lineWidth={2}>
+          <Timeline active={0} bulletSize={24} lineWidth={2} color="deepGreen">
             <Timeline.Item title="Web Developer">
               <Text c="dimmed" size="sm">
                 Alpha Ministries Canada · June - August 2025

@@ -34,6 +34,11 @@ function Contact() {
             component="a"
             href="mailto:trcalaquian@gmail.com"
             withBorder
+            c="gray.0"
+            style={{
+              backgroundColor: "var(--mantine-color-blueSlate-9)",
+              borderColor: "var(--mantine-color-blueSlate-6)",
+            }}
           >
             <FaEnvelope size={60} />
             <Title order={3} mt="sm">
@@ -51,6 +56,11 @@ function Contact() {
             rel="noopener noreferrer"
             href="https://linkedin.com/in/troycalaquian"
             withBorder
+            c="gray.0"
+            style={{
+              backgroundColor: "var(--mantine-color-blueSlate-9)",
+              borderColor: "var(--mantine-color-blueSlate-6)",
+            }}
           >
             <FaLinkedin size={60} />
             <Title order={3} mt="sm">
@@ -76,6 +86,11 @@ function Contact() {
             href="/TroyCalaquian_Resume.pdf"
             download="TroyCalaquian_Resume.pdf"
             withBorder
+            c="gray.0"
+            style={{
+              backgroundColor: "var(--mantine-color-blueSlate-9)",
+              borderColor: "var(--mantine-color-blueSlate-6)",
+            }}
           >
             <FaFileAlt size={60} />
             <Title order={3} mt="sm">
