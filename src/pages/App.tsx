@@ -14,11 +14,14 @@ import {
 import profilePic from "../assets/TroyCalaquian.png";
 import { useAnimatedNavigate } from "../hooks/useAnimatedNavigate";
 import { usePageAnimation } from "../hooks/usePageAnimation";
+import { useTypewriter } from "../hooks/useTypewriter";
 
 function App() {
   const navigate = useAnimatedNavigate();
 
   const container = usePageAnimation();
+  
+  const typeWriterRef = useTypewriter("Hi, I'm Troy!");
 
   return (
     <Container ref={container} className="page-container" size="lg" py="xl">
@@ -31,10 +34,13 @@ function App() {
           className="animate-section"
         >
           <Box maw={{ base: "100%", sm: 500 }}>
-            <Title order={1}>Hi, I'm Troy!</Title>
+            <Title order={1}>
+              <span ref={typeWriterRef}></span>
+            </Title>
 
             <Text size="lg" mt="md">
-              I'm a programmer who loves building clean, user-friendly applications while learning and implementing more technologies.
+              I'm a programmer who loves building clean, user-friendly
+              applications while learning and implementing more technologies.
             </Text>
           </Box>
 
@@ -57,7 +63,6 @@ function App() {
           </Title>
 
           <Card shadow="sm" padding="lg" radius="md" withBorder>
-
             <Title order={3}>Chunithm Game Info</Title>
 
             <Text mt="sm">
