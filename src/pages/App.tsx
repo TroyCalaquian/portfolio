@@ -20,7 +20,7 @@ function App() {
   const navigate = useAnimatedNavigate();
 
   const container = usePageAnimation();
-  
+
   const typeWriterRef = useTypewriter("Hi, I'm Troy!");
 
   return (
@@ -36,12 +36,15 @@ function App() {
           <Box maw={{ base: "100%", sm: 500 }}>
             <Title order={1}>
               <span ref={typeWriterRef}></span>
-              <span className="terminal-cursor" aria-hidden="true">_</span>
+              <span className="terminal-cursor" aria-hidden="true">
+                _
+              </span>
             </Title>
 
             <Text size="lg" mt="md">
               I'm a programmer who loves building clean, user-friendly
-              applications while learning and implementing different technologies.
+              applications while learning and implementing different
+              technologies.
             </Text>
           </Box>
 
@@ -63,7 +66,18 @@ function App() {
             Featured Project
           </Title>
 
-          <Card shadow="sm" padding="lg" radius="md" withBorder>
+          <Card
+            shadow="sm"
+            padding="lg"
+            radius="md"
+            withBorder
+            style={{
+              backgroundColor:
+                "light-dark(var(--mantine-color-deepGreen-0), var(--mantine-color-deepGreen-9))",
+              borderColor:
+                "light-dark(var(--mantine-color-mossGreen-3), var(--mantine-color-mossGreen-8))",
+            }}
+          >
             <Title order={3}>Chunithm Game Info</Title>
 
             <Text mt="sm">

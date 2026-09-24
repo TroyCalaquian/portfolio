@@ -1,39 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
-/**
- * BootSequence
- * ------------
- * A full-screen "terminal booting up" overlay shown briefly on load,
- * before fading out to reveal the site underneath. Meant to be mounted
- * once at the top of your app (e.g. in Layout.tsx, alongside
- * AnimatedBackground) — since Layout persists across route changes,
- * it naturally only plays once per session rather than on every
- * navigation.
- *
- * Pass its total duration as `revealDelay` to <AnimatedBackground /> so
- * the network background finishes powering on right as this overlay
- * clears — the two effects read as one moment instead of two.
- *
- * Respects prefers-reduced-motion: renders nothing at all in that case,
- * so the site just loads normally with no overlay to wait out.
- */
 
 const DEFAULT_LINES = [
-  '> initializing_system...',
+  '> initializing_website...',
   '> establishing_connection...',
   '> connection_established',
   '> welcome_',
 ];
 
 interface BootSequenceProps {
-  /** Lines shown one at a time, in order. */
   lines?: string[];
-  /** Called once the overlay has fully faded out. */
   onComplete?: () => void;
-  /** Text color. Defaults to a neon green suited to a dark theme. */
   color?: string;
-  /** Background color of the overlay itself. Defaults to black. */
   background?: string;
 }
 

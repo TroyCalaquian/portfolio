@@ -18,7 +18,7 @@ const projects = [
     description:
       "A web application that shows users stats about songs in Chunithm, from album covers to level difficulty and version release, along with links to charts. The goal was to put all chart info into one English-language resource, since most existing sources are in Japanese. Built solo, from page design to database structure. The biggest challenge was structuring song data in Supabase, linking each entry to its album image and storing difficulty tiers as JSON. The database currently covers four versions and roughly 400 songs, with more being added over time.",
     tech: [skills.React, skills.TypeScript, skills.GSAP, skills.Supabase, skills.HeroUI],
-    link: "https://warm-mooncake-33e06b.netlify.app/",
+    website: "https://warm-mooncake-33e06b.netlify.app/",
     github: "https://github.com/TroyCalaquian/rhythm-game-info",
   },
 ];

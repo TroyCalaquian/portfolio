@@ -56,6 +56,19 @@ function Projects() {
           placeholder="Search by name or tech used"
           onChange={(e) => setSearchTerm(e.target.value)}
           className="animate-section"
+          size="md"
+          radius="xl"
+          styles={{
+            input: {
+              backgroundColor:
+                "light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6))",
+              borderColor:
+                "light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4))",
+              "&:focus": {
+                borderColor: "var(--mantine-color-mossGreen-6)",
+              },
+            },
+          }}
         />
 
         <Stack gap="lg">
@@ -66,6 +79,12 @@ function Projects() {
               radius="md"
               withBorder
               className="animate-section"
+              style={{
+                backgroundColor:
+                  "light-dark(var(--mantine-color-deepGreen-0), var(--mantine-color-deepGreen-9))",
+                borderColor:
+                  "light-dark(var(--mantine-color-mossGreen-3), var(--mantine-color-mossGreen-8))",
+              }}
             >
               <Flex direction={{ base: "column", sm: "row" }} gap="md">
                 <Image
@@ -76,7 +95,8 @@ function Projects() {
                   w={{ base: "100%", sm: 500 }}
                   style={{
                     objectFit: "contain",
-                    background: "var(--mantine-color-dark-6)",
+                    background:
+                      "light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-6))",
                   }}
                 />
                 <Box style={{ flex: 1 }}>
@@ -106,7 +126,7 @@ function Projects() {
                     </Button>
                     <Button
                       component="a"
-                      href={project.website}
+                      href={project.github}
                       target="_blank"
                       variant="light"
                       color="blueSlate"

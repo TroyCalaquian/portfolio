@@ -20,12 +20,21 @@ export default function CTA({ hook, support, btnString, redirect }: CTAProps) {
       radius="md"
       withBorder
       style={{
-        backgroundColor: "var(--mantine-color-blueSlate-9)",
-        borderColor: "var(--mantine-color-blueSlate-6)",
+        backgroundColor:
+          "light-dark(var(--mantine-color-blueSlate-0), var(--mantine-color-blueSlate-9))",
+        borderColor:
+          "light-dark(var(--mantine-color-blueSlate-3), var(--mantine-color-blueSlate-6))",
       }}
     >
-      <Title order={3} c="gray.0">{hook}</Title>
-      <Text mt="sm" c="blueSlate.2">{support}</Text>
+      <Title order={3} c="light-dark(var(--mantine-color-dark-7), white)">
+        {hook}
+      </Title>
+      <Text
+        mt="sm"
+        c="light-dark(var(--mantine-color-blueSlate-7), var(--mantine-color-blueSlate-2))"
+      >
+        {support}
+      </Text>
       <Group mt="md">
         <Button onClick={() => navigate(redirect)}>{btnString}</Button>
       </Group>
