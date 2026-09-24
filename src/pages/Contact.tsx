@@ -17,6 +17,13 @@ function Contact() {
 
   const typeWriterRef = useTypewriter("Contact me!");
 
+  const contactCardStyle = {
+    backgroundColor:
+      "light-dark(var(--mantine-color-blueSlate-0), var(--mantine-color-blueSlate-9))",
+    borderColor:
+      "light-dark(var(--mantine-color-blueSlate-3), var(--mantine-color-blueSlate-6))",
+  };
+
   return (
     <Container ref={container} className="page-container" size="lg" py="xl">
       <Stack gap={40}>
@@ -42,13 +49,10 @@ function Contact() {
             component="a"
             href="mailto:trcalaquian@gmail.com"
             withBorder
-            c="gray.0"
-            style={{
-              backgroundColor: "var(--mantine-color-blueSlate-9)",
-              borderColor: "var(--mantine-color-blueSlate-6)",
-            }}
+            c="light-dark(var(--mantine-color-dark-7), white)"
+            style={contactCardStyle}
           >
-            <FaEnvelope size={60} />
+            <FaEnvelope size={60} color="var(--mantine-color-mossGreen-5)" />
             <Title order={3} mt="sm">
               Email
             </Title>
@@ -64,13 +68,10 @@ function Contact() {
             rel="noopener noreferrer"
             href="https://linkedin.com/in/troycalaquian"
             withBorder
-            c="gray.0"
-            style={{
-              backgroundColor: "var(--mantine-color-blueSlate-9)",
-              borderColor: "var(--mantine-color-blueSlate-6)",
-            }}
+            c="light-dark(var(--mantine-color-dark-7), white)"
+            style={contactCardStyle}
           >
-            <FaLinkedin size={60} />
+            <FaLinkedin size={60} color="var(--mantine-color-mossGreen-5)" />
             <Title order={3} mt="sm">
               LinkedIn
             </Title>
@@ -94,13 +95,10 @@ function Contact() {
             href="/TroyCalaquian_Resume.pdf"
             download="TroyCalaquian_Resume.pdf"
             withBorder
-            c="gray.0"
-            style={{
-              backgroundColor: "var(--mantine-color-blueSlate-9)",
-              borderColor: "var(--mantine-color-blueSlate-6)",
-            }}
+            c="light-dark(var(--mantine-color-dark-7), white)"
+            style={contactCardStyle}
           >
-            <FaFileAlt size={60} />
+            <FaFileAlt size={60} color="var(--mantine-color-mossGreen-5)" />
             <Title order={3} mt="sm">
               Download it here!
             </Title>

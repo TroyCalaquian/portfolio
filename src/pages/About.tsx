@@ -16,6 +16,7 @@ import skills from "../helper/skills.tsx";
 import { usePageAnimation } from "../hooks/usePageAnimation.tsx";
 import CTA from "../components/cta.tsx";
 import { useTypewriter } from "../hooks/useTypewriter";
+import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
 
 function About() {
   const container = usePageAnimation();
@@ -82,39 +83,64 @@ function About() {
           <Title order={2} mb="lg">
             Experience
           </Title>
-          <Timeline active={0} bulletSize={24} lineWidth={2} color="deepGreen">
-            <Timeline.Item title="Web Developer">
-              <Text c="dimmed" size="sm">
-                Alpha Ministries Canada · June - August 2025
+          <Timeline
+            active={4}
+            bulletSize={28}
+            lineWidth={2}
+            color="mossGreen"
+            styles={{
+              itemBullet: {
+                backgroundColor: "var(--mantine-color-mossGreen-6)",
+              },
+            }}
+          >
+            <Timeline.Item
+              title="Web Developer"
+              bullet={<FaBriefcase size={12} />}
+            >
+              <Text c="dimmed" size="sm" fw={500}>
+                Alpha Ministries Canada · June – August 2025
               </Text>
-              <Text size="xs">
+              <Text size="xs" mt={4}>
                 Maintained and updated the guest page for Alpha Ministries
                 Canada to help users sign up
               </Text>
             </Timeline.Item>
-            <Timeline.Item title="Graduated BCIT CST">
-              <Text c="dimmed" size="sm">
+
+            <Timeline.Item
+              title="Graduated BCIT CST"
+              bullet={<FaGraduationCap size={12} />}
+            >
+              <Text c="dimmed" size="sm" fw={500}>
                 BCIT · June 2024
               </Text>
-              <Text size="xs">
+              <Text size="xs" mt={4}>
                 Graduated from BCIT with a diploma in Computer Systems
                 Technology with distinction
               </Text>
             </Timeline.Item>
-            <Timeline.Item title="Software Developer (Practicum)">
-              <Text c="dimmed" size="sm">
-                Eagle Eyes Search · April - May 2024
+
+            <Timeline.Item
+              title="Software Developer (Practicum)"
+              bullet={<FaBriefcase size={12} />}
+            >
+              <Text c="dimmed" size="sm" fw={500}>
+                Eagle Eyes Search · April – May 2024
               </Text>
-              <Text size="xs">
+              <Text size="xs" mt={4}>
                 Created a prototype as part of a feasibility test to validate
                 client requirements and guide implementation decisions
               </Text>
             </Timeline.Item>
-            <Timeline.Item title="Software Developer (Practicum)">
-              <Text c="dimmed" size="sm">
-                Love Your Planet · January - April 2024
+
+            <Timeline.Item
+              title="Software Developer (Practicum)"
+              bullet={<FaBriefcase size={12} />}
+            >
+              <Text c="dimmed" size="sm" fw={500}>
+                Love Your Planet · January – April 2024
               </Text>
-              <Text size="xs">
+              <Text size="xs" mt={4}>
                 Debugged and patched issues in React Native to support ongoing
                 development
               </Text>
