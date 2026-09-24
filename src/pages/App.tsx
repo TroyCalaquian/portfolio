@@ -36,11 +36,12 @@ function App() {
           <Box maw={{ base: "100%", sm: 500 }}>
             <Title order={1}>
               <span ref={typeWriterRef}></span>
+              <span className="terminal-cursor" aria-hidden="true">_</span>
             </Title>
 
             <Text size="lg" mt="md">
               I'm a programmer who loves building clean, user-friendly
-              applications while learning and implementing more technologies.
+              applications while learning and implementing different technologies.
             </Text>
           </Box>
 

@@ -39,7 +39,7 @@ function Projects() {
           <Title order={1}>Projects</Title>
 
           <Text size="lg" mt="md">
-            Here are some of the things that I've built that I'm proud of!
+            Here are projects that I've done and their respective challenges.
           </Text>
         </Box>
 
