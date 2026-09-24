@@ -79,12 +79,12 @@ function App() {
             <Group mt="md" align="center">
               <Button
                 component="a"
-                href="https://github.com/TroyCalaquian/rhythm-game-info"
+                href="https://warm-mooncake-33e06b.netlify.app/"
                 target="_blank"
                 variant="light"
                 rel="noopener noreferrer"
               >
-                View on GitHub
+                View website
               </Button>
 
               <Anchor

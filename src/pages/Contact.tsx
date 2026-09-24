@@ -10,15 +10,23 @@ import {
 } from "@mantine/core";
 import { FaEnvelope, FaLinkedin, FaFileAlt } from "react-icons/fa";
 import { usePageAnimation } from "../hooks/usePageAnimation";
+import { useTypewriter } from "../hooks/useTypewriter";
 
 function Contact() {
   const container = usePageAnimation();
+
+  const typeWriterRef = useTypewriter("Contact me!");
 
   return (
     <Container ref={container} className="page-container" size="lg" py="xl">
       <Stack gap={40}>
         <Box className="animate-section">
-          <Title order={1}>Contact Me!</Title>
+          <Title order={1}>
+            <span ref={typeWriterRef}></span>
+            <span className="terminal-cursor" aria-hidden="true">
+              _
+            </span>
+          </Title>
 
           <Text size="lg" mt="md">
             Feel free to email me or connect with me on LinkedIn!

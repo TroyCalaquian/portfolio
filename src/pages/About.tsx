@@ -15,9 +15,12 @@ import Point from "../components/iconListPoint";
 import skills from "../helper/skills.tsx";
 import { usePageAnimation } from "../hooks/usePageAnimation.tsx";
 import CTA from "../components/cta.tsx";
+import { useTypewriter } from "../hooks/useTypewriter";
 
 function About() {
   const container = usePageAnimation();
+
+  const typeWriterRef = useTypewriter("Troy Calaquian");
 
   return (
     <Container ref={container} className="page-container" size="lg" py="xl">
@@ -30,7 +33,12 @@ function About() {
           className="animate-section"
         >
           <Box maw={{ base: "100%", sm: 500 }}>
-            <Title order={1}>Troy Calaquian</Title>
+            <Title order={1}>
+              <span ref={typeWriterRef}></span>
+              <span className="terminal-cursor" aria-hidden="true">
+                _
+              </span>
+            </Title>
             <Text size="lg" mt="md">
               I am a programmer who enjoys learning and implementing new
               technologies to create clean, user-friendly applications. I

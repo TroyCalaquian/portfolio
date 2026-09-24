@@ -17,6 +17,7 @@ import Point from "../components/iconListPoint";
 import { FaSearch } from "react-icons/fa";
 import { usePageAnimation } from "../hooks/usePageAnimation";
 import CTA from "../components/cta";
+import { useTypewriter } from "../hooks/useTypewriter";
 
 function Projects() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -32,11 +33,18 @@ function Projects() {
 
   const container = usePageAnimation();
 
+  const typeWriterRef = useTypewriter("Projects");
+
   return (
     <Container ref={container} className="page-container" size="lg" py="xl">
       <Stack gap={80}>
         <Box className="animate-section">
-          <Title order={1}>Projects</Title>
+          <Title order={1}>
+            <span ref={typeWriterRef}></span>
+            <span className="terminal-cursor" aria-hidden="true">
+              _
+            </span>
+          </Title>
 
           <Text size="lg" mt="md">
             Here are projects that I've done and their respective challenges.
@@ -89,13 +97,22 @@ function Projects() {
                   <Group mt="md">
                     <Button
                       component="a"
-                      href={project.link}
+                      href={project.website}
+                      target="_blank"
+                      variant="light"
+                      rel="noopener noreferrer"
+                    >
+                      View website
+                    </Button>
+                    <Button
+                      component="a"
+                      href={project.website}
                       target="_blank"
                       variant="light"
                       color="blueSlate"
                       rel="noopener noreferrer"
                     >
-                      View on GitHub
+                      View GitHub repository
                     </Button>
                   </Group>
                 </Box>
