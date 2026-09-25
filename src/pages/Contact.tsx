@@ -10,15 +10,30 @@ import {
 } from "@mantine/core";
 import { FaEnvelope, FaLinkedin, FaFileAlt } from "react-icons/fa";
 import { usePageAnimation } from "../hooks/usePageAnimation";
+import { useTypewriter } from "../hooks/useTypewriter";
 
 function Contact() {
   const container = usePageAnimation();
+
+  const typeWriterRef = useTypewriter("Contact me!");
+
+  const contactCardStyle = {
+    backgroundColor:
+      "light-dark(var(--mantine-color-blueSlate-0), var(--mantine-color-blueSlate-9))",
+    borderColor:
+      "light-dark(var(--mantine-color-blueSlate-3), var(--mantine-color-blueSlate-6))",
+  };
 
   return (
     <Container ref={container} className="page-container" size="lg" py="xl">
       <Stack gap={40}>
         <Box className="animate-section">
-          <Title order={1}>Contact Me!</Title>
+          <Title order={1}>
+            <span ref={typeWriterRef}></span>
+            <span className="terminal-cursor" aria-hidden="true">
+              _
+            </span>
+          </Title>
 
           <Text size="lg" mt="md">
             Feel free to email me or connect with me on LinkedIn!
@@ -27,22 +42,24 @@ function Contact() {
 
         <SimpleGrid cols={{ base: 1, sm: 2 }} className="animate-section">
           <Card
-            className="contact-card"
+            className="hover-lift"
             shadow="sm"
             padding="lg"
             radius="md"
             component="a"
             href="mailto:trcalaquian@gmail.com"
             withBorder
+            c="light-dark(var(--mantine-color-dark-7), white)"
+            style={contactCardStyle}
           >
-            <FaEnvelope size={60} />
+            <FaEnvelope size={60} color="var(--mantine-color-mossGreen-5)" />
             <Title order={3} mt="sm">
               Email
             </Title>
             <Text mt="sm">trcalaquian@gmail.com</Text>
           </Card>
           <Card
-            className="contact-card"
+            className="hover-lift"
             shadow="sm"
             padding="lg"
             radius="md"
@@ -51,8 +68,10 @@ function Contact() {
             rel="noopener noreferrer"
             href="https://linkedin.com/in/troycalaquian"
             withBorder
+            c="light-dark(var(--mantine-color-dark-7), white)"
+            style={contactCardStyle}
           >
-            <FaLinkedin size={60} />
+            <FaLinkedin size={60} color="var(--mantine-color-mossGreen-5)" />
             <Title order={3} mt="sm">
               LinkedIn
             </Title>
@@ -68,16 +87,18 @@ function Contact() {
 
         <Box maw={550} className="animate-section">
           <Card
-            className="contact-card"
+            className="hover-lift"
             shadow="sm"
             padding="lg"
             radius="md"
             component="a"
-            href="/TroyCalaquian_resume.pdf"
+            href="/TroyCalaquian_Resume.pdf"
             download="TroyCalaquian_Resume.pdf"
             withBorder
+            c="light-dark(var(--mantine-color-dark-7), white)"
+            style={contactCardStyle}
           >
-            <FaFileAlt size={60} />
+            <FaFileAlt size={60} color="var(--mantine-color-mossGreen-5)" />
             <Title order={3} mt="sm">
               Download it here!
             </Title>

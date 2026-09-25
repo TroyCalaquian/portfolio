@@ -13,11 +13,13 @@ import Contact from "./pages/Contact.tsx";
 import Projects from "./pages/Projects.tsx";
 import theme from "./helper/theme.tsx";
 import ScrollToTop from "./components/scrollToTop.tsx";
+import { AnimatedBackground } from "./components/animatedBackground.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <MantineProvider theme={theme} defaultColorScheme="auto">
     <StrictMode>
       <BrowserRouter>
+        <AnimatedBackground revealDelay={2}/>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Layout />}>

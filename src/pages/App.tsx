@@ -3,22 +3,33 @@ import {
   Box,
   Title,
   Text,
-  Image,
   Container,
   Stack,
   Card,
   Group,
   Button,
   Anchor,
+  Badge,
 } from "@mantine/core";
-import profilePic from "../assets/TroyCalaquian.png";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useAnimatedNavigate } from "../hooks/useAnimatedNavigate";
 import { usePageAnimation } from "../hooks/usePageAnimation";
+import { useTypewriter } from "../hooks/useTypewriter";
+import { EqualizerAvatar } from "../components/equalizerAvatar";
 
 function App() {
   const navigate = useAnimatedNavigate();
-
   const container = usePageAnimation();
+  const typeWriterRef = useTypewriter("Hi, I'm Troy!");
+
+  const techStack = [
+    "React",
+    "Node",
+    "HeroUI",
+    "TailwindCSS",
+    "GSAP",
+    "Supabase",
+  ];
 
   return (
     <Container ref={container} className="page-container" size="lg" py="xl">
@@ -31,31 +42,42 @@ function App() {
           className="animate-section"
         >
           <Box maw={{ base: "100%", sm: 500 }}>
-            <Title order={1}>Hi, I'm Troy!</Title>
+            <Title order={1}>
+              <span ref={typeWriterRef}></span>
+              <span className="terminal-cursor" aria-hidden="true">
+                _
+              </span>
+            </Title>
 
             <Text size="lg" mt="md">
-              BCIT CST graduate building modern web applications.
+              I'm a programmer who loves building clean, user-friendly
+              applications while learning and implementing different
+              technologies.
             </Text>
 
-            <Group mt="lg">
-              <Button onClick={() => navigate("/about")}>About Me</Button>
-              <Button variant="outline" onClick={() => navigate("/contact")}>
-                Contact Me
-              </Button>
+            <Group mt="lg" gap="md">
+              <Anchor
+                href="https://github.com/TroyCalaquian"
+                target="_blank"
+                rel="noopener noreferrer"
+                c="inherit"
+                className="icon-link"
+              >
+                <FaGithub size={26} />
+              </Anchor>
+              <Anchor
+                href="https://www.linkedin.com/in/troycalaquian/"
+                target="_blank"
+                rel="noopener noreferrer"
+                c="inherit"
+                className="icon-link"
+              >
+                <FaLinkedin size={26} />
+              </Anchor>
             </Group>
           </Box>
 
-          <Image
-            src={profilePic}
-            alt="Troy portrait"
-            w={250}
-            h={250}
-            radius="50%"
-            style={{
-              objectFit: "cover",
-              border: "3px solid #39ff14",
-            }}
-          />
+          <EqualizerAvatar />
         </Flex>
 
         <Box className="animate-section">
@@ -63,8 +85,19 @@ function App() {
             Featured Project
           </Title>
 
-          <Card shadow="sm" padding="lg" radius="md" withBorder>
-
+          <Card
+            shadow="sm"
+            padding="lg"
+            radius="md"
+            withBorder
+            className="hover-lift"
+            style={{
+              backgroundColor:
+                "light-dark(var(--mantine-color-deepGreen-0), var(--mantine-color-deepGreen-9))",
+              borderColor:
+                "light-dark(var(--mantine-color-mossGreen-3), var(--mantine-color-mossGreen-8))",
+            }}
+          >
             <Title order={3}>Chunithm Game Info</Title>
 
             <Text mt="sm">
@@ -72,31 +105,34 @@ function App() {
               information about songs from the rhythm game Chunithm.
             </Text>
 
-            <Text size="sm" mt="md" c="dimmed">
-              Technologies: React • Node • HeroUI • TailWindCSS • GSAP •
-              SupaBase
-            </Text>
+            <Group mt="md" gap="xs">
+              {techStack.map((tech) => (
+                <Badge key={tech} variant="light" color="mossGreen">
+                  {tech}
+                </Badge>
+              ))}
+            </Group>
 
             <Group mt="md" align="center">
               <Button
                 component="a"
-                href="https://github.com/TroyCalaquian/rhythm-game-info"
+                href="https://warm-mooncake-33e06b.netlify.app/"
                 target="_blank"
                 variant="light"
                 rel="noopener noreferrer"
               >
-                View on GitHub
+                View website
               </Button>
 
-              <Anchor
-                underline="never"
-                c="inherit"
+              <Button
+                c="a"
                 onClick={() => navigate("/projects")}
-                style={{ cursor: "pointer" }}
+                variant="light"
+                color="blueSlate"
                 size="sm"
               >
-                See all projects →
-              </Anchor>
+                See all projects
+              </Button>
             </Group>
           </Card>
         </Box>

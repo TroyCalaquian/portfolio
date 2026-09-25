@@ -17,6 +17,7 @@ import Point from "../components/iconListPoint";
 import { FaSearch } from "react-icons/fa";
 import { usePageAnimation } from "../hooks/usePageAnimation";
 import CTA from "../components/cta";
+import { useTypewriter } from "../hooks/useTypewriter";
 
 function Projects() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -32,14 +33,21 @@ function Projects() {
 
   const container = usePageAnimation();
 
+  const typeWriterRef = useTypewriter("Projects");
+
   return (
     <Container ref={container} className="page-container" size="lg" py="xl">
       <Stack gap={80}>
         <Box className="animate-section">
-          <Title order={1}>Projects</Title>
+          <Title order={1}>
+            <span ref={typeWriterRef}></span>
+            <span className="terminal-cursor" aria-hidden="true">
+              _
+            </span>
+          </Title>
 
           <Text size="lg" mt="md">
-            Here are some of the things that I've built that I'm proud of!
+            Here are projects that I've done and their respective challenges.
           </Text>
         </Box>
 
@@ -48,6 +56,19 @@ function Projects() {
           placeholder="Search by name or tech used"
           onChange={(e) => setSearchTerm(e.target.value)}
           className="animate-section"
+          size="md"
+          radius="xl"
+          styles={{
+            input: {
+              backgroundColor:
+                "light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6))",
+              borderColor:
+                "light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4))",
+              "&:focus": {
+                borderColor: "var(--mantine-color-mossGreen-6)",
+              },
+            },
+          }}
         />
 
         <Stack gap="lg">
@@ -57,19 +78,26 @@ function Projects() {
               padding="lg"
               radius="md"
               withBorder
-              className="animate-section"
+              className="animate-section hover-lift"
+              style={{
+                backgroundColor:
+                  "light-dark(var(--mantine-color-blueSlate-0), var(--mantine-color-blueSlate-9))",
+                borderColor:
+                  "light-dark(var(--mantine-color-blueSlate-3), var(--mantine-color-blueSlate-8))",
+              }}
             >
-              <Flex
-                direction={{ base: "column", sm: "row" }}
-                gap="md"
-              >
+              <Flex direction={{ base: "column", sm: "row" }} gap="md">
                 <Image
                   src={project.image}
                   alt={project.title}
                   radius="md"
                   h={{ base: 200, sm: 300 }}
                   w={{ base: "100%", sm: 500 }}
-                  style={{ objectFit: "contain", background: "#13161d" }}
+                  style={{
+                    objectFit: "contain",
+                    background:
+                      "light-dark(var(--mantine-color-blueSlate-0), var(--mantine-color-blueSlate-9))",
+                  }}
                 />
                 <Box style={{ flex: 1 }}>
                   <Title order={3} mt="md">
@@ -78,7 +106,7 @@ function Projects() {
                   <Text mt="sm">{project.description}</Text>
 
                   <Title order={5} mt="md">
-                    Tech Stack
+                    Technologies used:
                   </Title>
                   <Group mt="md">
                     {project.tech.map((tech) => (
@@ -89,12 +117,22 @@ function Projects() {
                   <Group mt="md">
                     <Button
                       component="a"
-                      href={project.link}
+                      href={project.website}
                       target="_blank"
                       variant="light"
                       rel="noopener noreferrer"
                     >
-                      View on GitHub
+                      View website
+                    </Button>
+                    <Button
+                      component="a"
+                      href={project.github}
+                      target="_blank"
+                      variant="light"
+                      color="blueSlate"
+                      rel="noopener noreferrer"
+                    >
+                      View GitHub repository
                     </Button>
                   </Group>
                 </Box>
