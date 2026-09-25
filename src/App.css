@@ -2,14 +2,6 @@ body {
   background-color: var(--mantine-color-body);
 }
 
-.contact-card {
-  transition: transform 0.2s ease;
-}
-
-.contact-card:hover {
-  transform: scale(1.05);
-}
-
 .terminal-cursor {
   display: inline-block;
   margin-left: 2px;
@@ -31,4 +23,33 @@ body {
     animation: none;
     opacity: 1;
   }
+}
+
+.hover-lift {
+  transition: scale 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.hover-lift:hover {
+  scale: 1.02;
+  border-color: var(--mantine-color-mossGreen-6) !important;
+  box-shadow: 0 0 0 1px var(--mantine-color-mossGreen-6);
+}
+
+.profile-image {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 24px var(--mantine-color-mossGreen-6);
+}
+
+.icon-link {
+  transition: transform 150ms ease, color 150ms ease;
+  display: inline-flex;
+}
+
+.icon-link:hover {
+  transform: scale(1.15);
+  color: var(--mantine-color-mossGreen-5) !important;
 }

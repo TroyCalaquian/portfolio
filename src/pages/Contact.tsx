@@ -42,7 +42,7 @@ function Contact() {
 
         <SimpleGrid cols={{ base: 1, sm: 2 }} className="animate-section">
           <Card
-            className="contact-card"
+            className="hover-lift"
             shadow="sm"
             padding="lg"
             radius="md"
@@ -59,7 +59,7 @@ function Contact() {
             <Text mt="sm">trcalaquian@gmail.com</Text>
           </Card>
           <Card
-            className="contact-card"
+            className="hover-lift"
             shadow="sm"
             padding="lg"
             radius="md"
@@ -87,7 +87,7 @@ function Contact() {
 
         <Box maw={550} className="animate-section">
           <Card
-            className="contact-card"
+            className="hover-lift"
             shadow="sm"
             padding="lg"
             radius="md"

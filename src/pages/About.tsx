@@ -53,6 +53,7 @@ function About() {
           </Box>
           <Image
             src={profilePic}
+            className="profile-image"
             alt="Troy portrait"
             w={250}
             h={250}

@@ -32,7 +32,6 @@ const theme = createTheme({
       "#142803",
     ],
     blueSlate: [
-      "#eef0f5",
       "#d7dbe6",
       "#b3bcd1",
       "#8f9bbc",
@@ -42,6 +41,7 @@ const theme = createTheme({
       "#40485c",
       "#303647",
       "#1f2530",
+      "#141a22",
     ],
     dark: [
       "#c9c9c9",

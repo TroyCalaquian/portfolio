@@ -10,6 +10,12 @@ Improvements that need to be done:
 6. Add more animations to home page + buttons
 7. Animated background?
 
+# feedback
+
+1. Change pfp on home
+2. Darker CTA
+3. Change the background color of each project
+
 
 # To run project
 

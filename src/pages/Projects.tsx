@@ -78,12 +78,12 @@ function Projects() {
               padding="lg"
               radius="md"
               withBorder
-              className="animate-section"
+              className="animate-section hover-lift"
               style={{
                 backgroundColor:
-                  "light-dark(var(--mantine-color-deepGreen-0), var(--mantine-color-deepGreen-9))",
+                  "light-dark(var(--mantine-color-blueSlate-0), var(--mantine-color-blueSlate-9))",
                 borderColor:
-                  "light-dark(var(--mantine-color-mossGreen-3), var(--mantine-color-mossGreen-8))",
+                  "light-dark(var(--mantine-color-blueSlate-3), var(--mantine-color-blueSlate-8))",
               }}
             >
               <Flex direction={{ base: "column", sm: "row" }} gap="md">
