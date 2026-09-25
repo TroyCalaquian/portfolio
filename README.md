@@ -1,20 +1,6 @@
-# TODO
+# Work portfolio
 
-Improvements that need to be done:
-
-1. Change the layout of the main page
-2. Change the overall color theme
-3. Change font (need review)
-4. Possibly make a case study (bit hard to do...)
-5. On LinkedIn, change banner to be better
-6. Add more animations to home page + buttons
-7. Animated background?
-
-# feedback
-
-1. Change pfp on home
-2. Darker CTA
-3. Change the background color of each project
+This is a Vite + React + TypeScript for displaying my work experience and projects that I've done.
 
 
 # To run project
