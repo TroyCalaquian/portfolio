@@ -8,7 +8,7 @@ This is a Vite + React + TypeScript for displaying my work experience and projec
 
 - Interactive animated background (canvas particle network that reacts to the cursor)
 - Terminal-style boot sequence and typewriter intro
-- Page transitions and scroll-in animations powered by GSAP
+- Page transitions powered by GSAP
 - Light and dark mode
 - Searchable projects page
 - Responsive layout
@@ -39,3 +39,4 @@ Use the following command to run the project: `npm run dev`
 # TODO
 
 1. Add blog page for future projects and reflections
+2. Add a sound reactive component
