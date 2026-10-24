@@ -30,6 +30,7 @@ export default function Layout() {
     { label: "About", path: "/about" },
     { label: "Projects", path: "/projects" },
     { label: "Contact", path: "/contact" },
+    {label: "Blog", path: "/blog"},
   ];
 
   const { setColorScheme } = useMantineColorScheme();
