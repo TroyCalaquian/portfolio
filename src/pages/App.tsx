@@ -136,6 +136,37 @@ function App() {
             </Group>
           </Card>
         </Box>
+        <Box className="animate-section">
+          <Card
+            shadow="sm"
+            padding="lg"
+            radius="md"
+            withBorder
+            className="hover-lift"
+            style={{
+              backgroundColor:
+                "light-dark(var(--mantine-color-blueSlate-0), var(--mantine-color-blueSlate-9))",
+              borderColor:
+                "light-dark(var(--mantine-color-blueSlate-3), var(--mantine-color-blueSlate-6))",
+            }}
+          >
+            <Group justify="space-between">
+              <Title order={3}>Blog</Title>
+              <Badge variant="light">In progress</Badge>
+            </Group>
+
+            <Text mt="sm">
+              Notes on code, projects, and the games I love. Coming soon.
+            </Text>
+
+            <Group mt="md" gap="xs">
+              <Badge variant="light">Dev</Badge>
+              <Badge variant="light" color="blueSlate">
+                Games
+              </Badge>
+            </Group>
+          </Card>
+        </Box>
       </Stack>
     </Container>
   );
