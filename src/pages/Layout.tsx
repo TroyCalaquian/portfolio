@@ -7,37 +7,72 @@ import {
   Container,
   ActionIcon,
   Stack,
+  useMantineColorScheme,
+  useComputedColorScheme,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { Outlet, useLocation } from "react-router-dom";
 import { FaGithub, FaLinkedin, FaSun, FaMoon } from "react-icons/fa";
-import { useMantineColorScheme, useComputedColorScheme } from "@mantine/core";
+import { useState } from "react";
 import { useAnimatedNavigate } from "../hooks/useAnimatedNavigate";
 import { BootSequence } from "../components/bootSequence";
-import { useState } from "react";
+
+// Defined once, outside the component, since it never changes.
+const navLinks = [
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Projects", path: "/projects" },
+  { label: "Blog", path: "/blog" },
+  { label: "Contact", path: "/contact" },
+];
 
 export default function Layout() {
   const location = useLocation();
-
   const navigate = useAnimatedNavigate();
 
-  const [opened, { toggle: toggleNav }] = useDisclosure();
-
+  const [opened, { toggle: toggleNav, close: closeNav }] = useDisclosure();
   const [booted, setBooted] = useState(false);
-
-  const navLinks = [
-    { label: "Home", path: "/" },
-    { label: "About", path: "/about" },
-    { label: "Projects", path: "/projects" },
-    { label: "Contact", path: "/contact" },
-    {label: "Blog", path: "/blog"},
-  ];
 
   const { setColorScheme } = useMantineColorScheme();
   const computedColorScheme = useComputedColorScheme("dark");
 
-  const toggle = () =>
+  const toggleColorScheme = () =>
     setColorScheme(computedColorScheme === "dark" ? "light" : "dark");
+
+  // "/blog/some-post" should still highlight "Blog". Home needs an exact
+  // match, since every path starts with "/".
+  const isActive = (path: string) =>
+    path === "/"
+      ? location.pathname === "/"
+      : location.pathname === path || location.pathname.startsWith(`${path}/`);
+
+  // Shared by the desktop header and the mobile navbar.
+  const renderNavLinks = (onNavigate?: () => void) =>
+    navLinks.map((link) => (
+      <Anchor
+        key={link.path}
+        fw={isActive(link.path) ? 700 : 500}
+        c={isActive(link.path) ? "mossGreen" : "gray"}
+        underline="never"
+        onClick={() => {
+          navigate(link.path);
+          onNavigate?.();
+        }}
+        style={{ cursor: "pointer" }}
+      >
+        {link.label}
+      </Anchor>
+    ));
+
+  const colorSchemeToggle = (
+    <ActionIcon
+      variant="subtle"
+      onClick={toggleColorScheme}
+      aria-label="Toggle color scheme"
+    >
+      {computedColorScheme === "dark" ? <FaSun /> : <FaMoon />}
+    </ActionIcon>
+  );
 
   return (
     <>
@@ -66,70 +101,40 @@ export default function Layout() {
             <Burger opened={opened} onClick={toggleNav} hiddenFrom="sm" />
 
             <Group gap="lg" visibleFrom="sm">
-              {navLinks.map((link) => (
-                <Anchor
-                  key={link.path}
-                  fw={location.pathname === link.path ? 700 : 500}
-                  c={location.pathname === link.path ? "mossGreen" : "gray"}
-                  underline="never"
-                  onClick={() => navigate(link.path)}
-                  style={{ cursor: "pointer" }}
-                >
-                  {link.label}
-                </Anchor>
-              ))}
-              <ActionIcon variant="subtle" onClick={toggle}>
-                {computedColorScheme === "dark" ? <FaSun /> : <FaMoon />}
-              </ActionIcon>
+              {renderNavLinks()}
+              {colorSchemeToggle}
             </Group>
           </Group>
         </AppShell.Header>
 
         <AppShell.Navbar p="md">
           <Stack gap="xs">
-            {navLinks.map((link) => (
-              <Anchor
-                key={link.path}
-                fw={location.pathname === link.path ? 700 : 500}
-                c={location.pathname === link.path ? "neonGreen" : "gray"}
-                underline="never"
-                onClick={() => {
-                  navigate(link.path);
-                  toggleNav();
-                }}
-                style={{ cursor: "pointer" }}
-              >
-                {link.label}
-              </Anchor>
-            ))}
-            <ActionIcon variant="subtle" onClick={toggle}>
-              {computedColorScheme === "dark" ? <FaSun /> : <FaMoon />}
-            </ActionIcon>
+            {renderNavLinks(closeNav)}
+            {colorSchemeToggle}
           </Stack>
         </AppShell.Navbar>
 
-        <AppShell.Main>
-          {booted && <Outlet />}
-        </AppShell.Main>
+        <AppShell.Main>{booted && <Outlet />}</AppShell.Main>
+
         <AppShell.Footer>
           <Container py="md">
-            <Group justify="space-between">
-              <Group gap="md">
-                <Anchor
-                  href="https://github.com/TroyCalaquian"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaGithub size={24} />
-                </Anchor>
-                <Anchor
-                  href="https://www.linkedin.com/in/troycalaquian/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaLinkedin size={24} />
-                </Anchor>
-              </Group>
+            <Group gap="md">
+              <Anchor
+                href="https://github.com/TroyCalaquian"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <FaGithub size={24} />
+              </Anchor>
+              <Anchor
+                href="https://www.linkedin.com/in/troycalaquian/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin size={24} />
+              </Anchor>
             </Group>
           </Container>
         </AppShell.Footer>

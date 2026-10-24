@@ -53,3 +53,69 @@ body {
   transform: scale(1.15);
   color: var(--mantine-color-mossGreen-5) !important;
 }
+
+/* Markdowns */
+.blog-content {
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.blog-content > * + * {
+  margin-top: 1.1rem;
+}
+
+.blog-content h2,
+.blog-content h3,
+.blog-content h4 {
+  margin-top: 2rem;
+}
+
+.blog-content ul,
+.blog-content ol {
+  padding-left: 1.5rem;
+}
+
+.blog-content a {
+  color: light-dark(
+    var(--mantine-color-mossGreen-8),
+    var(--mantine-color-mossGreen-5)
+  );
+}
+
+.blog-content blockquote {
+  margin-inline: 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--mantine-color-mossGreen-6);
+  color: var(--mantine-color-dimmed);
+}
+
+.blog-content code {
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: var(--mantine-font-family-monospace);
+  background: light-dark(
+    var(--mantine-color-gray-1),
+    var(--mantine-color-dark-6)
+  );
+}
+
+.blog-content pre {
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  background: light-dark(
+    var(--mantine-color-gray-1),
+    var(--mantine-color-dark-6)
+  );
+}
+
+.blog-content pre code {
+  padding: 0;
+  background: none;
+}
+
+.blog-content img {
+  max-width: 100%;
+  border-radius: 8px;
+}
